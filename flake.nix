@@ -20,7 +20,7 @@
 				];
 				LANG = "lua"; # Speciy language of repository
 				EDITOR = "nvim"; # Set neovim to default editor when starting shell
-				shellHook = ''echo "Deving" | figlet'';
+				shellHook = ''echo "Neovim" | figlet'';
 			};
 		};
 	};
