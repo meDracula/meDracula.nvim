@@ -9,14 +9,12 @@
 		pkgs = import nixpkgs { inherit system; };
 	in
 	{
-		packages.${system}.default = [ pkgs.figlet ];
-
 		devShells.${system} = {
 			 neovim = pkgs.mkShell {
 			 	name = "neovim";
-				packages = [
-					self.packages.${system}.default
-					pkgs.neovim
+				packages = with pkgs; [
+					figlet
+					neovim
 				];
 				LANG = "lua"; # Speciy language of repository
 				EDITOR = "nvim"; # Set neovim to default editor when starting shell
